@@ -1,4 +1,4 @@
-package com.faceki
+package com.kycfaceki
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

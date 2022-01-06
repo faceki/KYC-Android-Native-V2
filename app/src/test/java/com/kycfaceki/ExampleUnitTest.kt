@@ -1,4 +1,4 @@
-package com.faceki
+package com.kycfaceki
 
 import org.junit.Test
 
