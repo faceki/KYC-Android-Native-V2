@@ -35,9 +35,6 @@ The minimum requirements for the SDK are:
 *	Android 5.0 (API level 21) or higher
 *	Internet connection
 
-### Basic Authentication (Deprecated)
-Previously, Basic Auth credentials were constructed using your API token as Client ID and email
-
 ### Authentication with OAuth2
 Your OAuth2 credentials are constructed using your API token as the Client ID and email. You can view and manage your API token.
 
@@ -80,4 +77,32 @@ repositories {
 	...
 	maven { url 'https://jitpack.io' }
 }
+```
+
+##Example
+
+```
+import com.facekikycverification.startup.FacekiVerification
+```
+
+Kotlin
+
+```
+var facekiVerification: FacekiVerification? = null
+facekiVerification = FacekiVerification()
+```
+
+```
+facekiVerification!!.initiateSMSDK(this, "YOUR_CLIENT_ID", "EMAIL_ADDRESS")
+```
+
+Java
+
+```
+FacekiVerification facekiVerification = null;
+facekiVerification = FacekiVerification();
+```
+
+```
+facekiVerification.initiateSMSDK(this, "YOUR_CLIENT_ID", "EMAIL_ADDRESS");
 ```
