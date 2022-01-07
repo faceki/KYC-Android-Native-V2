@@ -100,7 +100,7 @@ Java
 
 ```
 FacekiVerification facekiVerification = null;
-facekiVerification = FacekiVerification();
+facekiVerification = new FacekiVerification();
 ```
 
 ```
