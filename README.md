@@ -60,9 +60,8 @@ Use the SDK in your application by including the Maven repositories with the fol
 
 ```
 repositories {
-	google()
-	mavenCentral()
-	maven { url 'https://mobile-sdk.jumio.com' }
+	...
+	maven { url 'https://jitpack.io' }
 }
 ```
 
@@ -71,15 +70,14 @@ repositories {
 Use the Library in your application by implemention lib with the following `build.gradle` project module in Android Studio:
 
 ```
-implementation 'com.github.faceki:KYC-Android-Native:Tag'
+implementation 'com.github.faceki:KYC-Android-Native:$Version'
 ```
 
 and including the Maven repositories with the following `build.gradle` configuration in Android Studio:
 
 ```
 repositories {
-	google()
-	mavenCentral()
-	maven { url 'https://mobile-sdk.jumio.com' }
+	...
+	maven { url 'https://jitpack.io' }
 }
 ```
