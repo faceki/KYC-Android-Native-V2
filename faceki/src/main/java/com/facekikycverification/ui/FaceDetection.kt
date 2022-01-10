@@ -368,13 +368,13 @@ class FaceDetection : AppCompatActivity(), IApiCallback {
         when (type) {
             "fail" -> {
                 successPageModel.image = R.drawable.fail_gif
-                successPageModel.title = "Invalid"
+                successPageModel.title = getString(R.string.invalid)
                 successPageModel.errorMessage = error
                 successPageModel.link = ssr?.response?.invalid_redirect_url
             }
             "success" -> {
                 successPageModel.image = R.drawable.success_gif
-                successPageModel.title = "Successful"
+                successPageModel.title = getString(R.string.successful)
                 successPageModel.errorMessage = ssr?.response?.success_meaasge
                 successPageModel.link = ssr?.response?.success_redirect_url
             }

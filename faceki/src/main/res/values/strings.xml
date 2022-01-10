@@ -20,9 +20,11 @@
     <string name="scan_your_id_card">Scan your ID Card</string>
     <string name="place_your_id_card_within_the_frame_nand_make_sure_it_s_clear_with_no_reflections">Place your ID card within the frame,\nand make sure it\'s clear with no reflections.</string>
     <string name="flip_camera">Flip Camera</string>
+    <string name="invalid">Invalid</string>
     <string name="successful">Successful</string>
     <string name="upload">upload</string>
     <string name="finish">finish</string>
+    <string name="scan">Scan</string>
 
     <string name="permission_not_granted_by_user">Permissions not granted by the user.</string>
     <string name="could_not_set_up_the_face_detector">Could not set up the face detector!</string>
@@ -31,7 +33,7 @@
     <string name="something_went_wrong">Something went wrong please try again!</string>
     <string name="front_side">front side</string>
     <string name="back_side">back side</string>
-    <string name="place_your">\"Place your \"</string>
+    <string name="place_your">Place your</string>
     <string name="within_the_frame_nand_make_sure_it_s_clear_with_no_reflections"> within the frame,\nand make sure it\'s clear with no reflections.</string>
     <string name="back_to_home">Back to Home</string>
 </resources>

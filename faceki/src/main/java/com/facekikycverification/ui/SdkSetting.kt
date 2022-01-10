@@ -2,6 +2,7 @@ package com.facekikycverification.ui
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.content.res.Configuration
 import android.os.Bundle
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
@@ -45,7 +46,24 @@ class SdkSetting : AppCompatActivity(), IApiCallback {
 
         clientId = intent.getStringExtra("ClientId").toString()
         email = intent.getStringExtra("Email").toString()
+
+        setAppLanguage()
         apiCall()
+    }
+
+    private fun setAppLanguage() {
+        when (Locale.getDefault().displayLanguage) {
+            "العربية" -> changeLanguage("ar")
+            "English" -> changeLanguage("en")
+        }
+    }
+
+    private fun changeLanguage(language: String?) {
+        val locale = Locale(language)
+        Locale.setDefault(locale)
+        val configuration = Configuration()
+        configuration.locale = locale
+        this.resources.updateConfiguration(configuration, this.resources.displayMetrics)
     }
 
     private fun apiCall() {
@@ -250,7 +268,7 @@ class SdkSetting : AppCompatActivity(), IApiCallback {
             }
         }
         for (i in 0..count) {
-            ids?.idName = "Scan $name"
+            ids?.idName = getString(R.string.scan)+" $name"
             ids?.desc = text1 + name + text2
             if (i == 0) {
                 ids?.sideImageDark = frontImageDark
