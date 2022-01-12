@@ -1,3 +1,6 @@
+# Get Started with documentations and Steps
+https://docs.faceki.com/mobile-sdk/native-android-sdk 
+
 # Overview
 The Faceki Software Development Kit (SDK) provides you with a set of tools and UIs to develop an Android application perfectly fitted to your specific needs.
 
