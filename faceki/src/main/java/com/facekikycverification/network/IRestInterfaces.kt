@@ -9,15 +9,14 @@ import java.util.*
 
 interface IRestInterfaces {
 
-    @FormUrlEncoded
-    @POST("getToken")
-    fun getToken(@FieldMap fields: HashMap<String, String>): Call<Any>
+    @GET("auth/api/access-token")
+    fun getToken(@Query("clientId") clientId: String, @Query("clientSecret") clientSecret: String): Call<Any>
 
-    @GET("https://faceki.com/backend/api/sdk-settings")
-    fun sdkSetting(@Query("client_id") device_id: String): Call<Any>
+    @GET("kycrules/api/kycrules")
+    fun sdkSetting(@Header("Authorization") token: String): Call<Any>
 
     @Multipart
-    @POST("kyc-verification")
+    @POST("kycverify/api/kycverify/kyc-verification")
     fun uploadFiles(
         @Header("Authorization") token: String,
         @Part imageFile: List<MultipartBody.Part>

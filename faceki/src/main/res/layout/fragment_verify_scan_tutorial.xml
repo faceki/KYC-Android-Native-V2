@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <ImageView
+                android:id="@+id/ivLogo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:src="@drawable/logo_faceki"
+                android:layout_marginTop="40dp" />
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivLogo"
+                android:layout_marginTop="20dp"
+                android:text="@string/verify_your_identity"
+                android:textSize="28sp"
+                android:textColor="@color/yellow"
+                android:id="@+id/tvVerify" />
+
+        <FrameLayout
+                android:id="@+id/ivImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvVerify"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp">
+
+            <ImageView
+                    android:layout_width="400dp"
+                    android:layout_height="280dp"
+                    android:src="@drawable/doc_scan"
+                    android:layout_gravity="center" />
+
+            <ImageView
+                    android:layout_width="250dp"
+                    android:layout_height="250dp"
+                    android:src="@drawable/verify_scan"
+                    android:layout_marginTop="20dp"
+                    android:layout_gravity="center"/>
+
+        </FrameLayout>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/verify_scan"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:id="@+id/tvDoc"
+                android:layout_gravity="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivImage"/>
+
+        <TextView
+                android:id="@+id/tv1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/will_verify_the_scanned_document"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:layout_gravity="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDoc"
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="15dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+

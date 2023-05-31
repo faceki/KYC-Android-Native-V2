@@ -39,9 +39,9 @@ The minimum requirements for the SDK are:
 *	Internet connection
 
 ### Authentication with OAuth2
-Your OAuth2 credentials are constructed using your API token as the Client ID and email. You can view and manage your API token.
+Your OAuth2 credentials are constructed using your API token as the Client ID and clientSecret. You can view and manage your API token.
 
-Client ID and email are used to generate an OAuth2 access token. OAuth2 has to be activated for your account. Contact your Faceki Account Manager for activation.
+Client ID and clientSecret are used to generate an OAuth2 access token. OAuth2 has to be activated for your account. Contact your Faceki Account Manager for activation.
 
 #### Access Token Timeout (OAuth2)
 Your OAuth2 access token is valid for 60 minutes. After the token lifetime is expired, it is necessary to generate a new access token.

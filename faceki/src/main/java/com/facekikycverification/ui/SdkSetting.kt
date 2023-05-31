@@ -31,8 +31,8 @@ class SdkSetting : AppCompatActivity(), IApiCallback {
     var ssr: SdkSettingResponse? = null
     private var items: ArrayList<IdsModel> = ArrayList()
 
-    var clientId = ""
-    var email = ""
+    var clientId = "client_id"
+    var clientSecret = "client_secret"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,8 +44,8 @@ class SdkSetting : AppCompatActivity(), IApiCallback {
         window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_sdk_setting)
 
-        clientId = intent.getStringExtra("ClientId").toString()
-        email = intent.getStringExtra("Email").toString()
+//        clientId = intent.getStringExtra("ClientId").toString()
+//        clientSecret = intent.getStringExtra("clientSecret").toString()
 
         setAppLanguage()
         apiCall()
@@ -67,13 +67,8 @@ class SdkSetting : AppCompatActivity(), IApiCallback {
     }
 
     private fun apiCall() {
-        val hashMap = HashMap<String, String>()
-        hashMap["client_id"] = clientId
-        hashMap["email"] = email
-
         MyApplication.spinnerStart(this)
-        ApiCall.instance?.getToken(hashMap, this)
-        ApiCall.instance?.sdkSetting(clientId, this)
+        ApiCall.instance?.getToken(clientId, clientSecret, this)
     }
 
     override fun onStart() {
@@ -162,7 +157,7 @@ class SdkSetting : AppCompatActivity(), IApiCallback {
 
                 val tempData = object : TypeToken<SdkSettingResponse>() {}.type
                 ssr = gson.fromJson(jsonFavorites, tempData)
-                ssr?.let { setArrayList(it.response) }
+                ssr?.let { setArrayList(it.data) }
             } else
                 MyApplication.showMassage(this, getString(R.string.error))
         } else if (type == "GetToken") {
@@ -170,7 +165,10 @@ class SdkSetting : AppCompatActivity(), IApiCallback {
             if (responseGet.isSuccessful) {
                 val objectType = object : TypeToken<GetTokenResponse>() {}.type
                 val getTokenResponse: GetTokenResponse = Gson().fromJson(Gson().toJson(responseGet.body()), objectType)
-                MyApplication.setSharedPrefString("token", "Bearer " + getTokenResponse.token)
+                MyApplication.setSharedPrefString("token", "Bearer " + getTokenResponse.data?.access_token)
+                getTokenResponse.data?.access_token?.let {
+                    ApiCall.instance?.sdkSetting("Bearer $it", this)
+                }
             } else
                 MyApplication.showMassage(this, getString(R.string.error))
         }
@@ -228,12 +226,12 @@ class SdkSetting : AppCompatActivity(), IApiCallback {
 
     private fun setArrayList(ssr: SdkSettingResponse.Response) {
         items.clear()
-        for (i in 0 until ssr.number_of_doc) {
+        ssr.allowedKycDocuments?.forEachIndexed { index, idType ->
             ids = IdsModel()
-            when (i) {
-                0 -> setIdsModel(ssr.doc_type_one.trim())
-                1 -> setIdsModel(ssr.doc_type_two.trim())
-                2 -> setIdsModel(ssr.doc_type_three.trim())
+            when (index) {
+                0 -> setIdsModel(idType.trim())
+                1 -> setIdsModel(idType.trim())
+                2 -> setIdsModel(idType.trim())
             }
         }
         addImageItem()

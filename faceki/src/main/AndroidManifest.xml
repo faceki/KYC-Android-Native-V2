@@ -7,6 +7,8 @@
     <uses-feature android:name="android.hardware.camera.any" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.NFC" />
+    <uses-feature android:name="android.hardware.nfc" android:required="true" />
 
     <application
         android:name="com.facekikycverification.utils.MyApplication"
@@ -33,17 +35,25 @@
             android:screenOrientation="portrait"
             android:exported="false" />
         <activity
+            android:name="com.facekikycverification.ui.TutorialActivity"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
+            android:name="com.facekikycverification.ui.DocumentTypeActivity"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
             android:name="com.facekikycverification.ui.FaceDetection"
             android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name="com.facekikycverification.ui.MainActivity"
             android:exported="true">
-           <!-- <intent-filter>
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
+            </intent-filter>
         </activity>
 
         <meta-data

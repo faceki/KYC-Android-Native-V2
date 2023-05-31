@@ -36,4 +36,13 @@
     <string name="place_your">Place your</string>
     <string name="within_the_frame_nand_make_sure_it_s_clear_with_no_reflections"> within the frame,\nand make sure it\'s clear with no reflections.</string>
     <string name="back_to_home">Back to Home</string>
+    <string name="will_ask_you_to_take_a_picture_of_your_document">Will ask you to take a picture of your document</string>
+    <string name="document_scan">Document Scan</string>
+    <string name="verify_scan">Verify Scan</string>
+    <string name="will_verify_the_scanned_document">Will verify the scanned document</string>
+    <string name="take_selfie">Take Selfie</string>
+    <string name="take_your_selfie">Take your selfie</string>
+    <string name="scan_your_identity">Scan your identity</string>
+    <string name="keep_your_face_inside_the_frame_properly">Keep your face inside the frame properly</string>
+    <string name="select_a_document_type">Select a document type</string>
 </resources>

@@ -46,7 +46,7 @@ class MyApplication : Application() {
         var SHARED_PREF_NAME = "HOOT_PREF"
         const val FIRST = "first"
         private const val TOKEN = "token"
-        private const val EMAIL = "email"
+        private const val CLIENTSECRET = "clientSecret"
         private const val PASSWORD = "password"
         private const val KEYSERVERID = "keyserverid"
         private const val DEVICE_ID = "deviceid"
@@ -125,7 +125,7 @@ class MyApplication : Application() {
         fun myEmail(): String? {
             var userEmail = ""
             val sp = ctx!!.getSharedPreferences(SHARED_PREF_NAME, 0)
-            userEmail = sp.getString(EMAIL, "").toString()
+            userEmail = sp.getString(CLIENTSECRET, "").toString()
             return userEmail
         }
 
@@ -171,16 +171,16 @@ class MyApplication : Application() {
             editor.commit()
         }
 
-        fun saveCrediential(email: String, password: String) {
+        fun saveCrediential(clientSecret: String, password: String) {
             val sp = ctx!!.getSharedPreferences(SHARED_PREF_NAME, 0)
-            val e = sp.getString(EMAIL, null)
+            val e = sp.getString(CLIENTSECRET, null)
             val p = sp.getString(PASSWORD, null)
-            if (e != null && e == email && p != null && p == password) {
+            if (e != null && e == clientSecret && p != null && p == password) {
                 // Do not save, data already in preference
                 return
             }
             val editor = sp.edit()
-            editor.putString(EMAIL, email)
+            editor.putString(CLIENTSECRET, clientSecret)
             editor.putString(PASSWORD, password)
 
             // Commit the edits!

@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Faceki">
         <activity
-            android:name="com.kycfaceki.MainActivity"
+            android:name="com.kycfaceki.LandingActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

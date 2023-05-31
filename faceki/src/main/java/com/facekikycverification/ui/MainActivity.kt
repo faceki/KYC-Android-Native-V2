@@ -27,14 +27,14 @@ class MainActivity : AppCompatActivity(){
         window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN)
         setContentView(R.layout.activity_main)
 
-        startActivity(Intent(this, SdkSetting::class.java))
+        startActivity(Intent(this, TutorialActivity::class.java))
         finish()
     }
 
   /*  private fun apiCall() {
         val hashMap = HashMap<String, String>()
         hashMap["client_id"] = getString(R.string.client_id)
-        hashMap["email"] = getString(R.string.email)
+        hashMap["clientSecret"] = getString(R.string.clientSecret)
 
         ApiCall.instance?.getToken(hashMap, this)
     }
