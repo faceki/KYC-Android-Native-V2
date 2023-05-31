@@ -19,7 +19,7 @@ android {
 
     buildTypes {
         debug {
-            buildConfigField "String", "BASE_URL", "\"https://apidev.facechain.org/\""
+            buildConfigField "String", "BASE_URL", "\"https://sdk.faceki.com/\""
         }
         release {
             buildConfigField "String", "BASE_URL", "\"https://sdk.faceki.com/\""
